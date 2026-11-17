@@ -24,7 +24,6 @@ import type { VacancyTrendPoint } from "@/types/dashboard";
 
 interface VacancyTrendChartProps {
   data: VacancyTrendPoint[];
-  granularity?: "daily" | "monthly";
   totalVacancies?: number;
   fromDate: string;
   toDate: string;
@@ -100,19 +99,22 @@ const chartBody = (data: VacancyTrendPoint[]) => (
 
 export default function VacancyTrendChart({
   data,
-  granularity,
   totalVacancies,
   fromDate,
   toDate,
   isLoading,
   isError,
 }: VacancyTrendChartProps) {
-  const subtitle =
-    granularity === "daily"
-      ? "Daily vacancy counts"
-      : granularity === "monthly"
-        ? "Monthly vacancy counts"
-        : "Vacancy counts";
+  const total = isLoading
+    ? "…"
+    : totalVacancies === undefined
+      ? "—"
+      : totalVacancies.toLocaleString();
+
+  const from = formatDate(fromDate);
+  const to = formatDate(toDate);
+
+  const title = `Sri Lanka saw ${total} job vacancies between ${from} and ${to}`;
 
   const total = isLoading ? "…" : totalVacancies === undefined ? "—" : totalVacancies.toLocaleString();
   const publicTitle = fromDate && toDate && totalVacancies !== undefined ? (
