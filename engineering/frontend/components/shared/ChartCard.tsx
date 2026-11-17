@@ -16,7 +16,6 @@ interface ChartCardProps {
   loadingLabel: string;
   isError?: boolean;
   isEmpty?: boolean;
-  variant?: "default" | "public";
   children: ReactNode;
 }
 
@@ -51,7 +50,6 @@ export default function ChartCard({
   loadingLabel,
   isError = false,
   isEmpty = false,
-  variant = "default",
   children,
 }: ChartCardProps) {
   return (
