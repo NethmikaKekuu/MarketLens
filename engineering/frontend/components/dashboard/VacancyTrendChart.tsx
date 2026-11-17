@@ -26,6 +26,8 @@ interface VacancyTrendChartProps {
   data: VacancyTrendPoint[];
   granularity?: "daily" | "monthly";
   totalVacancies?: number;
+  fromDate: string;
+  toDate: string;
   isLoading: boolean;
   isError: boolean;
 }
@@ -100,6 +102,8 @@ export default function VacancyTrendChart({
   data,
   granularity,
   totalVacancies,
+  fromDate,
+  toDate,
   isLoading,
   isError,
 }: VacancyTrendChartProps) {
