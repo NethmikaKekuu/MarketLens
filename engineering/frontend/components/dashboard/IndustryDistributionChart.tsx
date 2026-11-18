@@ -141,12 +141,9 @@ export default function IndustryDistributionChart({
       <BarChart data={data} margin={{ bottom: 14 }}>
         <XAxis
           dataKey="name"
-          tick={{ fontSize: 9, fill: TICK_COLOR }}
+          tick={(props) => <XAxisTooltipTick {...props} maxLength={16} fontSize={9} fill={TICK_COLOR} />}
           interval={0}
-          angle={-45}
-          textAnchor="end"
-          height={100}
-          tickFormatter={(v: string) => (v.length > 20 ? `${v.substring(0, 20)}...` : v)}
+          height={120}
           label={{
             value: "Industry",
             position: "insideBottom",
