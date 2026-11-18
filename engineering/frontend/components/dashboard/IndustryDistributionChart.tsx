@@ -155,6 +155,7 @@ export default function IndustryDistributionChart({
         <YAxis
           type="number"
           tick={{ fontSize: 10, fill: TICK_COLOR }}
+          allowDecimals={false}
           label={{
             value: "No. of Vacancies",
             angle: -90,
