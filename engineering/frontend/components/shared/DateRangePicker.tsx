@@ -1,7 +1,6 @@
 "use client";
 
 import { toISODate } from "@/lib/date-range";
-import InfoTooltip from "@/components/shared/InfoTooltip";
 
 interface DateRangePickerProps {
   fromDate: string;
