@@ -132,15 +132,6 @@ export default function VacancyTrendChart({
     loadingLabel: "Loading trend data...",
   };
 
-  const sharedProps = {
-    title: "Vacancy Trend",
-    subtitle,
-    isLoading,
-    isError,
-    isEmpty: isEmptyChartData(data, (point) => point.open_job_count),
-    loadingLabel: "Loading trend data...",
-  };
-
   return (
     <>
       <SignedIn>
